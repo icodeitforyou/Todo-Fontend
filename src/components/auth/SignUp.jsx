@@ -15,7 +15,7 @@ export default function SignUp() {
     try {
       setloading(true);
       const res = await axios.post(
-        "http://localhost:3000/auth/signup",
+        "https://todo-backend-qccs.onrender.com/auth/signup",
         formData
       );
       await new Promise((resolve) => setTimeout(resolve, 2000));

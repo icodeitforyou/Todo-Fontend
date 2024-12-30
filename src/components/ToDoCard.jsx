@@ -14,7 +14,7 @@ export default function ToDoCard({ note, setaddData }) {
   }
     try {
       const token = localStorage.getItem("token");
-      const res = await axios.delete("http://localhost:3000/todos/delete", {
+      const res = await axios.delete("https://todo-backend-qccs.onrender.com/todos/delete", {
         headers: {
           "Content-Type": "application/json",
           "x-access-token": token,

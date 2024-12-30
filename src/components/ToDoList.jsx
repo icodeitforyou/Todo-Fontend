@@ -13,7 +13,7 @@ export default function ToDoList() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:3000/todos/add",
+        "https://todo-backend-qccs.onrender.com/todos/add",
         formData,
         {
           headers: {
@@ -32,7 +32,7 @@ export default function ToDoList() {
     (async function () {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("http://localhost:3000/todos", {
+        const res = await axios.get("https://todo-backend-qccs.onrender.com/todos", {
           headers: {
             "Content-Type": "application/json",
             "x-access-token": token,

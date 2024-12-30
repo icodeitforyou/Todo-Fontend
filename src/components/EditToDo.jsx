@@ -13,7 +13,7 @@ export default function EditToDo({ editNewRef, note, setaddData }) {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.put(
-        "http://localhost:3000/todos/edit",
+        "https://todo-backend-qccs.onrender.com/todos/edit",
         formData,
         {
           headers: {
