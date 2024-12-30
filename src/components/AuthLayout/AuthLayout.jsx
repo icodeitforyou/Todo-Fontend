@@ -1,5 +1,4 @@
 import React from 'react'
-import SignIn from '../auth/signin'
 
 export default function AuthLayout({children}) {
   return (

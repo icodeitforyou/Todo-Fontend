@@ -7,8 +7,8 @@ import HeroSection from "../components/HeroSection";
 import NotFound from "../components/NotFound";
 import ToDoList from "../components/ToDoList";
 import Profile from "../components/Profile";
-import SignIn from "../components/auth/SignIn";
 import SignUp from "../components/auth/SignUp";
+import LogIn from "../components/auth/LogIn";
 
 export default function AppRoutes() {
   return (
@@ -16,7 +16,7 @@ export default function AppRoutes() {
       <Header />
       <Routes>
         <Route index element={<HeroSection />} />
-        <Route path="/signin" element={<AuthLayout children={<SignIn />} />} />
+        <Route path="/signin" element={<AuthLayout children={<LogIn />} />} />
         <Route path="/signup" element={<AuthLayout children={<SignUp />} />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/todos" element={<ToDoList />} />
