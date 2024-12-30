@@ -9,11 +9,12 @@ import ToDoList from "../components/ToDoList";
 import Profile from "../components/Profile";
 import SignUp from "../components/auth/SignUp";
 import LogIn from "../components/auth/LogIn";
+import HeaderBar from "../components/HeaderBar";
 
 export default function AppRoutes() {
   return (
     <>
-      <Header />
+      <HeaderBar />
       <Routes>
         <Route index element={<HeroSection />} />
         <Route path="/signin" element={<AuthLayout children={<LogIn />} />} />
