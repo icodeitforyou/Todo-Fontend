@@ -13,7 +13,7 @@ export default function ToDoList() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "https://todo-backend-qccs.onrender.com/todos/add",
+        "http://localhost:3000/todos/add",
         formData,
         {
           headers: {
@@ -24,20 +24,23 @@ export default function ToDoList() {
       );
       addNewRef.current?.close();
       setaddData(res);
+      setFormData({ title: "", description: "" });
     } catch (error) {
       console.log(error);
     }
   };
+  
   useEffect(() => {
     (async function () {
       try {
         const token = localStorage.getItem("token");
-        const res = await axios.get("https://todo-backend-qccs.onrender.com/todos", {
+        const res = await axios.get("http://localhost:3000/todos", {
           headers: {
             "Content-Type": "application/json",
             "x-access-token": token,
           },
         });
+        // const sortedNotes=res.data.notes.sort((a, b) => b.pined - a.pined);
         setToDos(res.data.notes);
       } catch (error) {
         console.log(error);

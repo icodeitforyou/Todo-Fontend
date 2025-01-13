@@ -1,19 +1,25 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, {useEffect, useState } from "react";
 
 export default function EditToDo({ editNewRef, note, setaddData }) {
-  const { title, description, _id } = note;
-  const [formData, setFormData] = useState({
-    title: title,
-    description: description,
-    id: _id,
-  });
+  // const { title, description, id } = note;
+  const [formData, setFormData] = useState({});
+  
+    useEffect(() => {
+      if (note?.id) {
+        setFormData({
+          title: note.title,
+          description: note.description,
+          id: note.id,
+        });
+      }
+    }, [note]);
 
   const handleSubmit = async () => {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.put(
-        "https://todo-backend-qccs.onrender.com/todos/edit",
+        "http://localhost:3000/todos/edit",
         formData,
         {
           headers: {
